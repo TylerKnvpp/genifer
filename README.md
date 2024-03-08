@@ -2,7 +2,7 @@
 
 ## Overview
 
-Genifer is a project that leverages the OpenAI API to generate search terms, summarize content, and generate UI based on user input. It uses Next.js as the main framework, and Tailwind CSS for styling.
+Genifer is a project that leverages the OpenAI API to generate dynamic UI based on a user's request.
 
 ## Getting Started
 
@@ -10,6 +10,8 @@ Genifer is a project that leverages the OpenAI API to generate search terms, sum
 
 - Node.js
 - Yarn
+- OpenAI API Key
+- SERPAPI Key
 
 #### Installation
 
