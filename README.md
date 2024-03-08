@@ -1,40 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Genifer
+
+## Overview
+
+Genifer is a project that leverages the OpenAI API to generate search terms, summarize content, and generate UI based on user input. It uses Next.js as the main framework, and Tailwind CSS for styling.
 
 ## Getting Started
 
-First, run the development server:
+#### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js
+- Yarn
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Installation
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository.
+2. Install the dependencies using yarn install.
+3. Create a .env.local file in the root directory and add your OpenAI API key, SERPAPI API key, and Supabase keys. Refer to next.config.mjs for the variable names.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Project Structure
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+##### pages
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This directory contains the main pages of the application. The index.tsx file is the main entry point of the application, and api directory contains the serverless functions.
 
-## Learn More
+#### components
 
-To learn more about Next.js, take a look at the following resources:
+This directory contains the React components used in the application. The Chat.tsx component is the main chat interface.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### utils
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This directory contains utility functions that interact with the OpenAI API and perform various tasks such as generating search terms, summarizing content, and checking if the content fulfills the user's request.
 
-## Deploy on Vercel
+#### services
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This directory contains the configurations for the OpenAI, SERPAPI, and Supabase services.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### Key Files
+
+- `pages/index.tsx`: The main page of the application. It renders the Chat component.
+- components/Chat.tsx: The chat interface. It uses the useChat hook from the ai/react package to handle the chat interactions.
+- `utils/generateSearchTerm.ts`: Generates a search term based on the user's last message.
+- `utils/summarizeContent.ts`: Summarizes the content of a webpage.
+- `utils/doesFulfillRequest.ts`: Checks if the summarized content fulfills the user's request.
+- `utils/generateUI.ts`: Generates a UI based on the content.
+- `services/openai.ts`: Configuration for the OpenAI service.
+- `services/serpapi.ts`: Configuration for the SERPAPI service.
+- `services/supabase.ts`: Configuration for the Supabase service.
+
+## Running the Application
+
+To run the application in development mode, use the command `yarn dev`. For production, first build the application using yarn build, then start the server using yarn start.
+
+## Testing
+
+Linting is set up in the project using ESLint. To run the linter, use the command yarn lint.
+Deployment
+The project is ready to be deployed on Vercel. It uses serverless functions which are compatible with the Vercel platform.
+
+## Contributing
+
+When contributing to this project, please ensure that any changes made pass the linter and that all existing functionality continues to work as expected.
