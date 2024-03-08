@@ -2,7 +2,7 @@
 
 ## Overview
 
-Genifer is a project that leverages the OpenAI API to generate dynamic UI based on a user's request.
+Genifer is a project that leverages the SERPAPI to browse the web and OpenAI API to summarize results and generate dynamic UI based on the model's findings.
 
 ## Getting Started
 
